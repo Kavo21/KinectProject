@@ -1,0 +1,106 @@
+﻿<Window x:Class="Kinect_v2_Learning.Vocabulary_Practice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect_v2_Learning"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        mc:Ignorable="d"
+        Title="Vocabulary_Practice" Height="1080" Width="1920"  WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Closing="Window_Closing" Icon="image/vocabulary.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/image/blackboard.jpg" />
+    </Window.Background>
+
+    <Viewbox>
+        <k:KinectRegion x:Name="kinectRegion" Width="1391" Height="783">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Name="camera" Grid.ColumnSpan="3" Margin="0,50,0.0,50.0" Grid.RowSpan="3"/>
+                <Image Name="colorcamera" Margin="0,237,0,10" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2"  />
+                <TextBlock x:Name="txtSentence" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Height="Auto" Width="Auto" FontSize="36" Foreground="White" FontWeight="Bold" Margin="68,9.8,0,10" Visibility="Collapsed"/>
+                <Image Name="exampleImage" Grid.Column="0" Grid.Row="1" Margin="68,9.8,0,10" Visibility="Collapsed"/>
+                <Image Name="Speech_Correct" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Bottom" Width="100" Source="image/correct.png" Visibility="Visible" Margin="216,0,0,15"/>
+                <Image Name="Posture_Correct" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="100" VerticalAlignment="Bottom" Width="100" Source="image/posture_High.png" Visibility="Visible" Margin="321,0,0,12"/>
+                <Label Name="Speech_Confidence" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="100" Width="Auto" FontSize="35" Background="{x:Null}" Foreground="#FFFFE500" BorderBrush="#FF004BFC" FontWeight="Bold" />
+                <Label Name="txtCountdowntime" Content="" FontSize="60" HorizontalAlignment="Left" Margin="320,66,0,0" VerticalAlignment="Top" Height="92" Width="122" Foreground="#FFFF0202" FontWeight="Bold"/>
+                <TextBlock Text="Pronunciation" Grid.Column="2"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="208,112,-13.8,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="269" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold"/>
+                <TextBlock Text="Take a photo" Grid.Column="2"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="220,291,6.2,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="237" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold"/>
+                <TextBlock Text="Next" Grid.Column="2"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="292,456,71,0" Grid.Row="1" VerticalAlignment="Top" Height="59" Width="100" FontSize="30" Foreground="#FFFFE500" FontWeight="Bold"/>
+                <ProgressBar Name="ImageUploadBar" HorizontalAlignment="Left" Height="35" Margin="68,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="532" Visibility="Collapsed" Foreground="#FF21FF0B" Background="{x:Null}"/>
+                <Button Name="btnSpeech" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"  Width="100" Height="100" VerticalAlignment="Top" Margin="292,7,0,0" BorderBrush="{x:Null}" Click="BtnSpeech_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/speech-icon.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Name="btnBack" HorizontalAlignment="Left" Margin="68,50,0,0" VerticalAlignment="Top" Width="119" Height="98" Click="BtnBack_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/if_MB__back_81161.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnNext" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"  Width="100" Height="100" VerticalAlignment="Top" Margin="292,351,0,0" BorderBrush="{x:Null}" Click="BtnNext_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/if_12_330407.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnPicture" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"  Width="100" Height="100" VerticalAlignment="Top" Margin="292,178,0,0" BorderBrush="{x:Null}" Click="TimerTrigger">
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/ScreenshotNormal.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnUploadFaceImage" HorizontalAlignment="Left"  Width="123" Height="120" VerticalAlignment="Top" Margin="192,48,0,0" BorderBrush="{x:Null}" Click="BtnUploadFaceImage_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/if_cloudapp_252109.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnOpenSelectItem" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"  Width="100" Height="100" Visibility="Collapsed" VerticalAlignment="Top" Margin="292,378,0,0" BorderBrush="{x:Null}" Click="BtnOpenSelectItem_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/128x128.png"/>
+                    </Button.Background>
+                </Button>
+                <TextBlock Name="txtVocabulary" Text="Vocabulary" TextAlignment="Center"  HorizontalAlignment="Left" Margin="364,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="195" Width="755" Foreground="White" FontSize="48" Grid.ColumnSpan="3" Grid.RowSpan="2" FontWeight="Bold">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.156"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock Name="FaceInfo" Text="Emotion Result" TextAlignment="Center"  HorizontalAlignment="Left" Margin="0,0,0,4.2" TextWrapping="Wrap" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Height="94" Width="459" Foreground="#FFFFE500" FontSize="25" FontWeight="Bold" Grid.Column="2" Grid.Row="2">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.156"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Button x:Name="btnRank" HorizontalAlignment="Left"  Width="110" Height="103" VerticalAlignment="Top" Margin="354,53,0,0" BorderBrush="{x:Null}" Click="BtnRank_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="image/chevron.png"/>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="txtGameTime" FontSize="60" HorizontalAlignment="Left" Margin="142,0,0,0" VerticalAlignment="Top" Height="100" Width="145" Foreground="#FFFFE500" FontWeight="Bold" RenderTransformOrigin="0.508,0.557" Grid.Column="2" Grid.Row="1"/>
+                <Label Name="txtScore" Content="Score:" HorizontalAlignment="Left" Margin="0,431,0,0" Grid.Row="1" VerticalAlignment="Top" Height="84" Width="287" FontSize="48" FontWeight="Bold" Foreground="#FFFFE500" RenderTransformOrigin="0.498,0.506" Grid.Column="2" Visibility="Hidden"/>
+                <Label x:Name="txtDetection" Content=""  HorizontalAlignment="Center" Margin="59,510,437,0" Grid.Row="1" VerticalAlignment="Top" Height="100" Width="432" FontSize="48" FontWeight="Bold" Foreground="#FFFFE500" Grid.RowSpan="2" RenderTransformOrigin="0.587,0.565" Grid.ColumnSpan="2"/>
+                <TextBlock Text="Rank"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="345,5,452,0" VerticalAlignment="Top" Height="55" Width="131" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                <TextBlock Text="Upload"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="190,7,143,0" VerticalAlignment="Top" Height="55" Width="131" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold"/>
+                <TextBlock Text="Exit"  TextAlignment="Center"  HorizontalAlignment="Center" Margin="58,7,275,0" VerticalAlignment="Top" Height="55" Width="131" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold"/>
+                <TextBlock Text="Correct Pronunciation、Posture" Grid.Column="1"  TextAlignment="Center"  HorizontalAlignment="Right" Margin="0,-5,15.2,0" VerticalAlignment="Top" Height="55" Width="558" FontSize="36" Foreground="#FFFFE500" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            </Grid>
+        </k:KinectRegion>
+    </Viewbox>
+</Window>

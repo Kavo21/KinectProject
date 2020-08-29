@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1971A5A7-ED2A-4D00-B8AE-790455D7638E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kinect_v2_Learning</RootNamespace>
+    <AssemblyName>Kinect-v2 Learning</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EngineIoClientDotNet, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EngineIoClientDotNet.1.0.3\lib\net45\EngineIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseDatabase.net.3.3.3\lib\netstandard1.1\Firebase.dll</HintPath>
+    </Reference>
+    <Reference Include="KinectControls.v2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\KinectControls.v2\bin\Debug\KinectControls.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Kinect.Face, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64" />
+    <Reference Include="Microsoft.Kinect.Tools, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64" />
+    <Reference Include="Microsoft.Kinect.Wpf.Controls, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ProjectOxford.Common, Version=1.0.324.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ProjectOxford.Common.1.0.324\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Microsoft.ProjectOxford.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ProjectOxford.Face, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ProjectOxford.Face.1.4.0\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\Microsoft.ProjectOxford.Face.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Speech, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SocketIoClientDotNet.1.0.3\lib\net45\SocketIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.8.0.14, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL">
+      <HintPath>..\packages\SuperSocket.ClientEngine.Core.0.8.0.14\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Net.NameResolution, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.NameResolution.4.3.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Security.4.3.0\lib\net46\System.Net.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebSocket4Net, Version=0.15.0.9, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocket4Net.0.15.0\lib\net45\WebSocket4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Api.xaml.cs">
+      <DependentUpon>Api.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Function\BasicMethod.cs" />
+    <Compile Include="Function\DataSet.cs" />
+    <Compile Include="Function\Extensions.cs" />
+    <Compile Include="Function\FirebaseUpload.cs" />
+    <Compile Include="Function\FunctionAbstractImplement.cs" />
+    <Compile Include="Function\BitmapToWriteableBitmap.cs" />
+    <Compile Include="Function\Capture_Method.cs" />
+    <Compile Include="Function\ColorBitmapGenerator.cs" />
+    <Compile Include="FaceFeatures\Emotion.xaml.cs">
+      <DependentUpon>Emotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Function\Emotion_Recognition_Method.cs" />
+    <Compile Include="FaceFeatures\Face_Features.xaml.cs">
+      <DependentUpon>Face_Features.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Function\Face_Recogniton.cs" />
+    <Compile Include="Function\GameEvent.cs" />
+    <Compile Include="Function\GameInterface.cs" />
+    <Compile Include="Function\PrintScreenMethod.cs" />
+    <Compile Include="Function\Pronunciation.cs" />
+    <Compile Include="Function\Rank.cs" />
+    <Compile Include="Function\RecognizerSelection.cs" />
+    <Compile Include="Function\RecordStudentsData.cs" />
+    <Compile Include="Function\ReturnPostureWords.cs" />
+    <Compile Include="Function\Select_Item.cs" />
+    <Compile Include="Function\Sentence.cs" />
+    <Compile Include="Function\Sokcet_Connect.cs" />
+    <Compile Include="Function\SoundPlay.cs" />
+    <Compile Include="Function\Students.cs" />
+    <Compile Include="Function\TTSClient.cs" />
+    <Compile Include="HandPointers\HandInScreenEngagementModel.cs" />
+    <Compile Include="HandPointers\HandOverheadEngagementModel.cs" />
+    <Compile Include="Function\KinectAudioStream.cs" />
+    <Compile Include="FaceFeatures\Kinect_Capture_Picture.xaml.cs">
+      <DependentUpon>Kinect_Capture_Picture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FaceFeatures\Show_Face_Features.xaml.cs">
+      <DependentUpon>Show_Face_Features.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Function\TextToSpeech.cs" />
+    <Compile Include="Function\SpeechRecognizerInfo.cs" />
+    <Compile Include="IndividualInteractiveActivity.xaml.cs">
+      <DependentUpon>IndividualInteractiveActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveActivity.xaml.cs">
+      <DependentUpon>InteractiveActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MicrophoneSetting.xaml.cs">
+      <DependentUpon>MicrophoneSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PeerMainWidnow.xaml.cs">
+      <DependentUpon>PeerMainWidnow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PeerStudentsStoryMarking.xaml.cs">
+      <DependentUpon>PeerStudentsStoryMarking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PeerVocabularyActivity.xaml.cs">
+      <DependentUpon>PeerVocabularyActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPeerStudentsStoryMarkingView.xaml.cs">
+      <DependentUpon>SelectPeerStudentsStoryMarkingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPeerVocabularyView.xaml.cs">
+      <DependentUpon>SelectPeerVocabularyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RankData.xaml.cs">
+      <DependentUpon>RankData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSentenceView.xaml.cs">
+      <DependentUpon>SelectSentenceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Item_View.xaml.cs">
+      <DependentUpon>Select_Item_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsStoryMarking.xaml.cs">
+      <DependentUpon>StudentsStoryMarking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Function\Vocabulary.cs" />
+    <Compile Include="Vocabulary_Practice.xaml.cs">
+      <DependentUpon>Vocabulary_Practice.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Api.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FaceFeatures\Emotion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FaceFeatures\Face_Features.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GreenScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HandPointers\HandPointerStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FaceFeatures\Kinect_Capture_Picture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IndividualInteractiveActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Function\BackgroundRemovalTool.cs" />
+    <Compile Include="GreenScreen.xaml.cs">
+      <DependentUpon>GreenScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="FaceFeatures\Practice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FaceFeatures\Show_Face_Features.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MicrophoneSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeerMainWidnow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeerStudentsStoryMarking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PeerVocabularyActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectPeerStudentsStoryMarkingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectPeerVocabularyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RankData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectSentenceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Select_Item_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentsStoryMarking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vocabulary_Practice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Function\Poseture.cs" />
+    <Compile Include="FaceFeatures\Practice.xaml.cs">
+      <DependentUpon>Practice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\speech-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\vocabulary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Picture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\book.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Emotion_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\ScreenshotNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Azure.png" />
+    <Resource Include="image\Azure_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\blackboard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\correct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\blue_posture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CursorSpriteSheet.png" />
+    <Resource Include="Assets\CursorSpriteSheetPurple.png" />
+    <Resource Include="Assets\DarkGray.png" />
+    <Resource Include="Assets\LightGray.png" />
+    <Resource Include="Assets\MediumGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HandPointers\HighlightRectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_Cross_2001870.png" />
+    <Resource Include="image\if_error_1646012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_MB__back_81161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_basket_1814090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_Streamline-70_185090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_package-purge_24217.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_12_330407.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Example_Image\1.jpg" />
+    <Resource Include="Example_Image\2.jpg" />
+    <Resource Include="Example_Image\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Example_Image\29250520_1879050475453026_1997732286_o.jpg" />
+    <Resource Include="Example_Image\happy.jpg" />
+    <Resource Include="Example_Image\massive.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_cloudapp_252109.png" />
+    <Resource Include="image\if_icon-130-cloud-upload_314245.png" />
+    <Resource Include="image\if_icon-130-cloud-upload_314715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Example_Image\sandess.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\if_check-box-outline-blank_326558.png" />
+    <Resource Include="image\if_check-box-outline_326561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\man-posture-silhouette-standing-with-raised-arms %281%29.png" />
+    <Resource Include="image\man-posture-silhouette-standing-with-raised-arms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\object_puper.png" />
+    <Resource Include="image\object_red.png" />
+    <Resource Include="Example_Image\anger.jpg" />
+    <Resource Include="image\kinect.ico" />
+    <Resource Include="image\script.png" />
+    <Resource Include="image\chatting.png" />
+    <Resource Include="Example_Image\smile.jpg" />
+    <Resource Include="Example_Image\happyEmotion.png" />
+    <Resource Include="Example_Image\Collar.jpg" />
+    <Resource Include="Example_Image\Chat.png" />
+    <Resource Include="Example_Image\Happy.png" />
+    <Resource Include="Example_Image\Grieving.jpg" />
+    <Resource Include="Example_Image\HappyEmoji.png" />
+    <Resource Include="Example_Image\Sorrow.png" />
+    <Resource Include="Example_Image\Startled.jpg" />
+    <Resource Include="Example_Image\SurprisedEmojipng.png" />
+    <Resource Include="Example_Image\Behind.png" />
+    <Resource Include="Example_Image\Down.png" />
+    <Resource Include="Example_Image\Infrontof.png" />
+    <Resource Include="Example_Image\Over.png" />
+    <Resource Include="Example_Image\Promise.png" />
+    <Resource Include="image\loginBackground.jpg" />
+    <Resource Include="image\Logins.jpg" />
+    <Resource Include="image\user.png" />
+    <Resource Include="image\Enter.png" />
+    <Resource Include="image\profile.png" />
+    <Resource Include="image\login-lock-refresh-in-circular-button.png" />
+    <Resource Include="image\start.png" />
+    <Resource Include="image\settings-gears.png" />
+    <Resource Include="image\settings.png" />
+    <Resource Include="image\headset.png" />
+    <Resource Include="image\chevron.png" />
+    <Resource Include="image\rank.png" />
+    <Resource Include="image\game-Classic.png" />
+    <Resource Include="image\game.png" />
+    <Resource Include="image\couple.png" />
+    <Resource Include="Example_Image\Mental_Image.png" />
+    <Resource Include="Example_Image\Visual_Image.jpg" />
+    <Resource Include="image\karate-posture.png" />
+    <Resource Include="image\bluebackground.png" />
+    <Resource Include="image\openbook.png" />
+    <Resource Include="image\people.png" />
+    <Resource Include="image\reuse.png" />
+    <Resource Include="Example_Image\Attach.png" />
+    <Resource Include="Example_Image\Ban.png" />
+    <Resource Include="Example_Image\Comfort.png" />
+    <Resource Include="Example_Image\Guilty.png" />
+    <Resource Include="Example_Image\Merge.png" />
+    <Resource Include="Example_Image\Overcome.png" />
+    <Resource Include="Example_Image\Relieve.png" />
+    <Resource Include="Example_Image\Scratch.png" />
+    <Resource Include="Example_Image\Smelly.png" />
+    <Resource Include="Example_Image\Chubby.png" />
+    <Resource Include="Example_Image\Establish.png" />
+    <Resource Include="Example_Image\Hail.png" />
+    <Resource Include="Example_Image\Launch.png" />
+    <Resource Include="Example_Image\Sprinkle.png" />
+    <Resource Include="Example_Image\Wander.png" />
+    <Resource Include="Example_Image\Float.png" />
+    <Resource Include="Example_Image\Burden.png" />
+    <Resource Include="Example_Image\Container.png" />
+    <Resource Include="Example_Image\Coral.png" />
+    <Resource Include="Example_Image\Grocery.png" />
+    <Resource Include="Example_Image\Mammal.png" />
+    <Resource Include="Example_Image\Mental.png" />
+    <Resource Include="Example_Image\Property.png" />
+    <Resource Include="Example_Image\Spark.png" />
+    <Resource Include="Example_Image\Surgery.png" />
+    <Resource Include="Example_Image\Vegetarian.png" />
+    <Resource Include="Example_Image\Despise.png" />
+    <Resource Include="Example_Image\Bankrupt.png" />
+    <Resource Include="Example_Image\Imaginary.png" />
+    <Resource Include="Example_Image\Unidentified.png" />
+    <Resource Include="Example_Image\Individual.png" />
+    <Resource Include="Example_Image\Depression.png" />
+    <Resource Include="Example_Image\Confidence.png" />
+    <Resource Include="Example_Image\Destroy.png" />
+    <Content Include="Raw\fault_sound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="image\vocabulary_item.png" />
+    <Resource Include="image\vocabulary _item_HighQuality.png" />
+    <Resource Include="image\posture_High.png" />
+    <Resource Include="image\documents-blue.png" />
+    <Resource Include="image\documents-green.png" />
+    <Resource Include="image\documents-yellow.png" />
+    <Resource Include="image\documents_red.png" />
+    <Resource Include="Example_Image\super.jpg" />
+    <Content Include="Raw\camerashutter.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raw\correct_sound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Kinect.Face\2.0\Redist\CommonConfiguration\x64\NuiDatabase" "NuiDatabase" /e /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="Kinect_v2_Learning.Show_Face_Features"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect_v2_Learning"
+        mc:Ignorable="d"
+        Title="Show_Face_Features" Height="345" Width="294.5" Background="White">
+    <Grid Margin="0,0,2,2">
+        <TextBox Name="Mouth_Open" HorizontalAlignment="Left" Height="47" Margin="7,3,0,0" TextWrapping="Wrap" Text="Mouth_Open" VerticalAlignment="Top" Width="203" FontSize="30" Foreground="#FFFA0101" Background="White" BorderBrush="{x:Null}"  />
+        <TextBox Name="Eye_Left_Closed" HorizontalAlignment="Left" Height="46" Margin="7,50,0,0" TextWrapping="Wrap" Text="Left-Eye-Close" VerticalAlignment="Top" Width="221" FontSize="30" Foreground="#FF0120FF" Background="White" BorderBrush="{x:Null}" />
+        <TextBox Name="Eye_Right_Closed" HorizontalAlignment="Left" Height="48" Margin="7,96,0,0" TextWrapping="Wrap" Text="Right-Eye-Close" VerticalAlignment="Top" Width="252" FontSize="30" Foreground="#FF05FF3E" BorderBrush="{x:Null}" />
+        <TextBox Name="Happy" HorizontalAlignment="Left" Height="48" Margin="7,144,0,0" TextWrapping="Wrap" Text="Happy" VerticalAlignment="Top" Width="101" FontSize="30" Foreground="#FFD001FF" BorderBrush="{x:Null}" />
+        <TextBox Name="Glasses" HorizontalAlignment="Left" Height="39" Margin="7,192,0,0" TextWrapping="Wrap" Text="Glasses" VerticalAlignment="Top" Width="118" FontSize="30" Foreground="#FF393C04" BorderBrush="{x:Null}" />
+        <TextBox x:Name="Looking_Away" HorizontalAlignment="Left" Height="38" Margin="7,267,0,0" TextWrapping="Wrap" Text="Looking-Away" VerticalAlignment="Top" Width="221" FontSize="30" Foreground="#FFED4805" BorderBrush="{x:Null}" />
+        <TextBox x:Name="Mouth_Move" HorizontalAlignment="Left" Height="36" Margin="7,231,0,0" TextWrapping="Wrap" Text="Mouth-Move" VerticalAlignment="Top" Width="261" FontSize="30" Foreground="#FF00D7CC" BorderBrush="{x:Null}" />
+
+    </Grid>
+</Window>

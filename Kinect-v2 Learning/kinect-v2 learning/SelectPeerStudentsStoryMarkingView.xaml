@@ -1,0 +1,44 @@
+﻿<Window x:Class="Kinect_v2_Learning.SelectPeerStudentsStoryMarkingView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kinect_v2_Learning"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        mc:Ignorable="d"
+        Title="SelectPeerStudentsStoryMarkingView" Height="718.763" Width="627.468" ResizeMode="NoResize" Icon="image/vocabulary.png" Background="#FF15C3E5" WindowStartupLocation="CenterScreen" Topmost="True">
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="251*"/>
+                <ColumnDefinition Width="362*"/>
+
+            </Grid.ColumnDefinitions>
+            <Label Content="Peer Students StoryMarking" HorizontalAlignment="Center" Margin="115,26,89.8,0" VerticalAlignment="Top" Height="56" Width="416" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="#FFFFF7F7" Background="{x:Null}" Grid.ColumnSpan="2" FontSize="28" Grid.RowSpan="2"/>
+            <Label Content="合作遊戲模式" HorizontalAlignment="Center" Margin="195,111,190.8,0" VerticalAlignment="Top" Height="54" Width="235" FontSize="35" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="#FFFFF7F7" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+            <k:KinectUserViewer Grid.Row="2" Height="146" HorizontalAlignment="Center" Width="175" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="219,0,218.8,-0.4" />
+            <Button x:Name="btnPeerStoryMarkingGame" HorizontalAlignment="Left" Margin="126.6,232,0,0" Grid.Row="1" VerticalAlignment="Top" Width="131" Height="116" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.519,1.045" Visibility="Visible" Grid.Column="1" Click="BtnPeerStoryMarkingGame_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="image/game.png"/>
+                </Button.Background>
+            </Button>
+            <Label Content="練習模式-單字" HorizontalAlignment="Left" Margin="76,319.4,0,0" Grid.Row="1" VerticalAlignment="Top" Height="58" Width="240" Foreground="White" FontSize="36" FontWeight="Bold" RenderTransformOrigin="-0.187,0.531" Grid.ColumnSpan="2" Visibility="Hidden"/>
+            <Label Content="Interactive" HorizontalAlignment="Left" Margin="100.6,353,0,0" Grid.Row="1" VerticalAlignment="Top" Height="58" Width="204" Foreground="White" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.171,0.418" Grid.Column="1"/>
+            <Button x:Name="btnPeerSentenceGame" HorizontalAlignment="Left" Margin="128,203,0,0" Grid.Row="1" VerticalAlignment="Top" Width="116" Height="116" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.492,0.5" Click="BtnPeerSentenceGame_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="image/game-Classic.png"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Sentence" HorizontalAlignment="Center" Margin="94,353,348.8,0" VerticalAlignment="Top" Height="58" Width="178" FontSize="36" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Foreground="#FFFFF7F7" Grid.Row="1" Grid.ColumnSpan="2"/>
+        </Grid>
+    </k:KinectRegion>
+</Window>
+

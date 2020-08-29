@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kinect-v2 Learning", "Kinect-v2 Learning\Kinect-v2 Learning.csproj", "{1971A5A7-ED2A-4D00-B8AE-790455D7638E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Debug|x64.ActiveCfg = Debug|x64
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Debug|x64.Build.0 = Debug|x64
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Release|x64.ActiveCfg = Release|x64
+		{1971A5A7-ED2A-4D00-B8AE-790455D7638E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB750BDE-A607-4986-8C28-37B2426CD3E3}
+	EndGlobalSection
+EndGlobal
